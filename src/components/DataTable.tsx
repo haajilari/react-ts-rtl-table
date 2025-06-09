@@ -15,7 +15,7 @@ interface DataTableProps {
 const DataTable: React.FC<DataTableProps> = ({
   data,
   title = "جدول داده‌ها",
-  height = 600,
+  // height = 600,
   onRowClick,
   onDataChanged,
 }) => {
@@ -55,7 +55,7 @@ const DataTable: React.FC<DataTableProps> = ({
 
     tabulator.current = new Tabulator(tableRef.current, {
       data: data,
-      height: height,
+      height: "auto",
       layout: "fitDataTable",
       responsiveLayout: "collapse",
       pagination: true,
@@ -249,7 +249,7 @@ const DataTable: React.FC<DataTableProps> = ({
         tabulator.current.destroy();
       }
     };
-  }, [data, height, onRowClick, onDataChanged]);
+  }, [data, onRowClick, onDataChanged]);
 
   const handleSearch = (term: string) => {
     setSearchTerm(term);
