@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RTL Styles */
+* {
+  direction: rtl;
+}
+
+/* Tabulator RTL Customization */
+.tabulator {
+  direction: rtl;
+  font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+}
+
+.tabulator .tabulator-header {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border-bottom: 2px solid #d1d5db;
+}
+
+.tabulator .tabulator-header .tabulator-col {
+  background: transparent;
+  border-left: 1px solid #d1d5db;
+  border-right: none;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content {
+  padding: 12px 8px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-title {
+  font-size: 14px;
+}
+
+/* Row Styles */
+.tabulator .tabulator-tableBody .tabulator-row {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.2s ease;
+}
+
+.tabulator .tabulator-tableBody .tabulator-row:hover {
+  background-color: #f9fafb;
+}
+
+.tabulator .tabulator-tableBody .tabulator-row.tabulator-row-even {
+  background-color: #fafafa;
+}
+
+.tabulator .tabulator-tableBody .tabulator-row.tabulator-row-even:hover {
+  background-color: #f3f4f6;
+}
+
+.tabulator .tabulator-tableBody .tabulator-row .tabulator-cell {
+  border-left: 1px solid #f3f4f6;
+  border-right: none;
+  padding: 12px 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Selection Styles */
+.tabulator .tabulator-tableBody .tabulator-row.tabulator-selected {
+  background-color: #ecfdf5 !important;
+}
+
+.tabulator .tabulator-tableBody .tabulator-row.tabulator-selected:hover {
+  background-color: #d1fae5 !important;
+}
+
+/* Pagination Styles */
+.tabulator .tabulator-footer {
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  padding: 12px;
+}
+
+.tabulator .tabulator-footer .tabulator-page {
+  background: white;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  margin: 0 2px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.tabulator .tabulator-footer .tabulator-page:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.tabulator .tabulator-footer .tabulator-page.active {
+  background: #10b981;
+  border-color: #10b981;
+  color: white;
+}
+
+.tabulator .tabulator-footer .tabulator-page.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Header Filter Styles */
+.tabulator .tabulator-header-filter input,
+.tabulator .tabulator-header-filter select {
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: white;
+  color: #374151;
+  text-align: right;
+}
+
+.tabulator .tabulator-header-filter input:focus,
+.tabulator .tabulator-header-filter select:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
+}
+
+/* Scrollbar Styles */
+.tabulator::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.tabulator::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.tabulator::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.tabulator::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom Utilities */
+.font-persian {
+  font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .tabulator .tabulator-header .tabulator-col .tabulator-col-content {
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+  
+  .tabulator .tabulator-tableBody .tabulator-row .tabulator-cell {
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+  
+  .tabulator .tabulator-footer {
+    padding: 8px;
+  }
+  
+  .tabulator .tabulator-footer .tabulator-page {
+    margin: 0 1px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .tabulator {
+    background: white !important;
+  }
+  
+  .tabulator .tabulator-header,
+  .tabulator .tabulator-tableBody {
+    background: white !important;
+  }
+  
+  .tabulator .tabulator-row:nth-child(even) {
+    background: #f9fafb !important;
+  }
+}
